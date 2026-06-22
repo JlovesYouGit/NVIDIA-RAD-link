@@ -24,7 +24,10 @@ nssm.zip
 
 # NVIDIA Driver
 nvidia_driver_extracted/
+driver_extracted/
 474.82-desktop-win10-win11-64bit-international-dch-whql.exe
+custom_nvidia_driver.exe
+custom_nvidia_driver.zip
 
 # IDE
 .vscode/
