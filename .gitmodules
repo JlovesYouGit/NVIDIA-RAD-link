@@ -1,3 +1,9 @@
 [submodule "NVIDIA-RAD-link"]
 	path = NVIDIA-RAD-link
 	url = https://github.com/JlovesYouGit/NVIDIA-RAD-link.git
+[submodule "DLSS-Updater"]
+	path = DLSS-Updater
+	url = https://github.com/recolic/DLSS-Updater.git
+[submodule "Streamline"]
+	path = Streamline
+	url = https://github.com/NVIDIA-RTX/Streamline.git
