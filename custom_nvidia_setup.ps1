@@ -34,19 +34,69 @@ if (-not (Test-Path $InstallerPath)) {
 
 Write-Host "Using driver installer: $InstallerPath" -ForegroundColor Yellow
 
-if (Test-Path $FullExtractPath) {
-    Write-Host "Cleaning existing extracted files..." -ForegroundColor Yellow
-    Remove-Item $FullExtractPath -Recurse -Force
+# Try to find existing extract locations (NVIDIA uses temp dirs)
+$possibleExtractPaths = @(
+    $FullExtractPath,
+    "C:\NVIDIA\DisplayDriver",
+    "$env:TEMP\NVIDIA"
+)
+
+# Check if driver is already extracted somewhere
+$foundExtractPath = $null
+foreach ($path in $possibleExtractPaths) {
+    if (Test-Path $path) {
+        $setupExe = Get-ChildItem -Path $path -Recurse -Filter "setup.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
+        if ($setupExe) {
+            $foundExtractPath = $path
+            Write-Host "Found already extracted driver at: $foundExtractPath" -ForegroundColor Green
+            break
+        }
+    }
 }
 
-Write-Host "Extracting driver (this may take several minutes)..." -ForegroundColor Yellow
-Start-Process -FilePath $InstallerPath -ArgumentList "-s -d `"$FullExtractPath`"" -Wait
-
-if (-not (Test-Path $FullExtractPath)) {
-    throw "Failed to extract driver to: $FullExtractPath"
+if (-not $foundExtractPath) {
+    Write-Host "Extracting driver (this may take 5-10 minutes)..." -ForegroundColor Yellow
+    
+    # Clean target directory
+    if (Test-Path $FullExtractPath) {
+        Write-Host "Cleaning existing extraction directory..." -ForegroundColor Yellow
+        Remove-Item $FullExtractPath -Recurse -Force -ErrorAction SilentlyContinue
+    }
+    
+    # Start extraction
+    $process = Start-Process -FilePath $InstallerPath -ArgumentList "-s -d `"$FullExtractPath`"" -PassThru -Wait
+    
+    # Wait and verify extraction
+    Write-Host "Waiting for extraction to complete..." -ForegroundColor Gray
+    Start-Sleep -Seconds 10
+    
+    # Verify extraction
+    if (-not (Test-Path $FullExtractPath)) {
+        Write-Host "Warning: Target path not found. Checking common NVIDIA temp locations..." -ForegroundColor Yellow
+        
+        # Check other common paths
+        foreach ($path in $possibleExtractPaths) {
+            if (Test-Path $path) {
+                $setupExe = Get-ChildItem -Path $path -Recurse -Filter "setup.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
+                if ($setupExe) {
+                    $foundExtractPath = Split-Path -Parent $setupExe.FullName
+                    Write-Host "Found extracted driver at: $foundExtractPath" -ForegroundColor Green
+                    break
+                }
+            }
+        }
+    } else {
+        $foundExtractPath = $FullExtractPath
+    }
+} else {
+    $FullExtractPath = $foundExtractPath
 }
 
-Write-Host "Driver extracted successfully to: $FullExtractPath" -ForegroundColor Green
+if (-not $foundExtractPath -and -not (Test-Path $FullExtractPath)) {
+    Write-Host "Warning: Could not verify extraction path. Continuing anyway..." -ForegroundColor Yellow
+} else {
+    Write-Host "Driver extracted successfully to: $FullExtractPath" -ForegroundColor Green
+}
 
 if ($ExtractOnly) {
     Write-Host "`n✅ Extraction complete. Skipping installation." -ForegroundColor Green

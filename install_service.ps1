@@ -10,7 +10,11 @@ param(
 $ErrorActionPreference = "Stop"
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$NssmUrl = "https://nssm.cc/release/nssm-2.24.zip"
+# Multiple mirrors for NSSM
+$NssmUrls = @(
+    "https://github.com/kirill-kouznetsov/nssm/releases/download/2.24/nssm-2.24.zip",
+    "https://nssm.cc/release/nssm-2.24.zip"
+)
 $NssmZip = Join-Path $ScriptDir "nssm.zip"
 $NssmDir = Join-Path $ScriptDir "nssm"
 $NssmExe = Join-Path $NssmDir "nssm-2.24\win64\nssm.exe"
@@ -73,7 +77,23 @@ if (-not (Test-Path $DaemonScript)) {
 # Download NSSM if needed
 if (-not (Test-Path $NssmExe)) {
     Write-Host "Downloading NSSM..." -ForegroundColor Cyan
-    Invoke-WebRequest -Uri $NssmUrl -OutFile $NssmZip -UseBasicParsing
+    $downloaded = $false
+    
+    foreach ($url in $NssmUrls) {
+        try {
+            Write-Host "  Trying: $url" -ForegroundColor Gray
+            Invoke-WebRequest -Uri $url -OutFile $NssmZip -UseBasicParsing -ErrorAction Stop
+            $downloaded = $true
+            break
+        } catch {
+            Write-Host "  Failed: $_" -ForegroundColor Yellow
+            continue
+        }
+    }
+    
+    if (-not $downloaded) {
+        throw "Failed to download NSSM from all mirrors. Please download it manually from https://nssm.cc/"
+    }
     
     Write-Host "Extracting NSSM..." -ForegroundColor Cyan
     Expand-Archive -Path $NssmZip -DestinationPath $NssmDir -Force
