@@ -1,0 +1,3 @@
+[submodule "NVIDIA-RAD-link"]
+	path = NVIDIA-RAD-link
+	url = https://github.com/JlovesYouGit/NVIDIA-RAD-link.git
