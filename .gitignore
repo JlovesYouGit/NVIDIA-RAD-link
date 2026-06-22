@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+
+# Windows
+.DS_Store
+Thumbs.db
+*.log
+
+# Logs
+logs/
+
+# NSSM
+nssm/
+nssm.zip
+
+# NVIDIA Driver
+nvidia_driver_extracted/
+474.82-desktop-win10-win11-64bit-international-dch-whql.exe
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
