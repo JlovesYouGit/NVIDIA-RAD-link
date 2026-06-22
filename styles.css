@@ -1,0 +1,872 @@
+/* ==========================================================================
+   OptiMas Premium Glassmorphism Stylesheet
+   ========================================================================== */
+
+:root {
+    --bg-dark: #07090e;
+    --card-bg: rgba(14, 20, 32, 0.55);
+    --card-border: rgba(255, 255, 255, 0.07);
+    --card-border-hover: rgba(255, 255, 255, 0.15);
+    
+    /* Harmonious Color Palette */
+    --amd-red: #ff3344;
+    --amd-glow: rgba(255, 51, 68, 0.25);
+    --nvidia-green: #76b900;
+    --nvidia-glow: rgba(118, 185, 0, 0.25);
+    --vulkan-orange: #ff4e00;
+    --vulkan-glow: rgba(255, 78, 0, 0.25);
+    
+    --text-primary: #f1f3f9;
+    --text-secondary: #90a0b7;
+    --text-muted: #627289;
+    
+    --glow-amd: radial-gradient(circle at 20% 30%, rgba(255, 51, 68, 0.15) 0%, transparent 60%);
+    --glow-nvidia: radial-gradient(circle at 80% 70%, rgba(118, 185, 0, 0.15) 0%, transparent 60%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Glowing Mesh Backgrounds */
+.glow-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 78, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(118, 185, 0, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 51, 68, 0.05) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* ==========================================================================
+   Header Section
+   ========================================================================== */
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 3rem;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--vulkan-orange), var(--amd-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 12px var(--amd-glow));
+    animation: pulseGlow 4s infinite ease-in-out;
+}
+
+.logo-text h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(to right, #ffffff, #c2cfeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-text p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(118, 185, 0, 0.12);
+    border: 1px solid rgba(118, 185, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--nvidia-green);
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 15px rgba(118, 185, 0, 0.1);
+}
+
+.status-badge.disconnected {
+    background: rgba(255, 51, 68, 0.12);
+    border: 1px solid rgba(255, 51, 68, 0.3);
+    color: var(--amd-red);
+    box-shadow: 0 0 15px rgba(255, 51, 68, 0.1);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: currentColor;
+    border-radius: 50%;
+    animation: pulseDot 1.5s infinite ease-in-out;
+}
+
+.uptime-counter {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.uptime-counter strong {
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ==========================================================================
+   Dashboard Grid & Cards
+   ========================================================================== */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.8rem;
+}
+
+.gpu-card, .dashboard-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gpu-card:hover, .dashboard-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--card-border-hover);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Primary GPU card layout */
+.primary-gpu {
+    grid-column: span 6;
+}
+.primary-gpu .card-glow {
+    background: linear-gradient(to bottom, rgba(255, 51, 68, 0.08) 0%, transparent 100%);
+}
+
+/* Secondary GPU card layout */
+.secondary-gpu {
+    grid-column: span 6;
+}
+.secondary-gpu .card-glow {
+    background: linear-gradient(to bottom, rgba(118, 185, 0, 0.08) 0%, transparent 100%);
+}
+
+.gpu-brand-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.gpu-brand-bar.amd {
+    color: var(--amd-red);
+}
+.gpu-brand-bar.nvidia {
+    color: var(--nvidia-green);
+}
+
+.gpu-arch {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    color: var(--text-secondary);
+}
+
+.gpu-info-header {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.gpu-info-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.driver-tag {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.3rem;
+}
+
+.gpu-metrics {
+    position: relative;
+    z-index: 2;
+}
+
+.metric-item {
+    margin-bottom: 1.5rem;
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
+}
+
+.metric-value-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.metric-percentage {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.progress-bar-container {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar.amd-bar {
+    background: linear-gradient(to right, var(--vulkan-orange), var(--amd-red));
+    box-shadow: 0 0 10px rgba(255, 51, 68, 0.4);
+}
+
+.progress-bar.nvidia-bar {
+    background: linear-gradient(to right, var(--nvidia-green), #9be61a);
+    box-shadow: 0 0 10px rgba(118, 185, 0, 0.4);
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.sub-metric {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 0.8rem;
+}
+
+.sub-metric .label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.sub-metric .value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.active-text {
+    color: var(--vulkan-orange);
+}
+
+.success-text {
+    color: var(--nvidia-green);
+}
+
+/* Canvas visualization */
+.canvas-container {
+    height: 80px;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.canvas-container canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   Swap Optimizer & Repos Cards
+   ========================================================================== */
+
+.swap-optimizer {
+    grid-column: span 7;
+}
+
+.repos-card {
+    grid-column: span 5;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card-title i {
+    font-size: 1.4rem;
+}
+
+.icon-orange {
+    color: var(--vulkan-orange);
+    filter: drop-shadow(0 0 8px var(--vulkan-glow));
+}
+
+.icon-blue {
+    color: #00bcd4;
+    filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.25));
+}
+
+.icon-pink {
+    color: #e91e63;
+    filter: drop-shadow(0 0 8px rgba(233, 30, 99, 0.25));
+}
+
+.card-title h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.feature-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: rgba(255, 78, 0, 0.12);
+    border: 1px solid rgba(255, 78, 0, 0.3);
+    color: var(--vulkan-orange);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.swap-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.swap-stats-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.swap-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.swap-stat .label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.swap-stat .value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Premium Pulsing Optimize Button */
+.opt-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--vulkan-orange), var(--amd-red));
+    border: none;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    box-shadow: 0 4px 20px rgba(255, 78, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.opt-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 51, 68, 0.5);
+}
+
+.opt-btn:active {
+    transform: translateY(0);
+}
+
+.btn-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.opt-btn.animating .btn-ring {
+    animation: ripple 0.8s ease-out;
+}
+
+.btn-subtext {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    display: block;
+}
+
+/* Cloned Repos Section */
+.repos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.repo-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.repo-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.repo-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.repo-meta i {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+}
+
+.repo-details h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.repo-details p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.badge.loaded {
+    background: rgba(0, 188, 212, 0.12);
+    border: 1px solid rgba(0, 188, 212, 0.3);
+    color: #00bcd4;
+}
+
+.badge.loading {
+    background: rgba(255, 193, 7, 0.12);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    color: #ffc107;
+}
+
+/* ==========================================================================
+   Forced Link Profiles Table Section
+   ========================================================================== */
+
+.profiles-card {
+    grid-column: span 12;
+}
+
+.add-profile-btn {
+    background: rgba(233, 30, 99, 0.12);
+    border: 1px solid rgba(233, 30, 99, 0.3);
+    color: #ff4081;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.add-profile-btn:hover {
+    background: #e91e63;
+    color: white;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.4);
+    transform: translateY(-1px);
+}
+
+.profiles-list-container {
+    margin-top: 1.5rem;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.profiles-header-row {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2.5fr 1.5fr 1fr;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2.5fr 1.5fr 1fr;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    align-items: center;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.profile-row:hover {
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.profile-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.profile-path {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 1.5rem;
+}
+
+.profile-mode {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--vulkan-orange);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.profile-mode.cuda-mode {
+    color: var(--nvidia-green);
+}
+
+.profile-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--nvidia-green);
+}
+
+.delete-row-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+    padding: 0.2rem 0.5rem;
+}
+
+.delete-row-btn:hover {
+    color: var(--amd-red);
+}
+
+/* ==========================================================================
+   Modals & Interaction Overlays
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-card {
+    background: rgba(14, 20, 32, 0.85);
+    border: 1px solid var(--card-border-hover);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 550px;
+    padding: 2.2rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.modal-header h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 0.9rem;
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #ff4081;
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.2);
+}
+
+.form-group select option {
+    background: #0f1524;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.submit-btn {
+    background: #e91e63;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+.submit-btn:hover {
+    background: #ff4081;
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes pulseGlow {
+    0%, 100% { filter: drop-shadow(0 0 8px var(--amd-glow)); }
+    50% { filter: drop-shadow(0 0 18px rgba(255, 78, 0, 0.45)); }
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+/* Responsive Scaling */
+@media (max-width: 1024px) {
+    .primary-gpu, .secondary-gpu, .swap-optimizer, .repos-card {
+        grid-column: span 12;
+    }
+}

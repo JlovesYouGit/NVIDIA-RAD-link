@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-06-18T17:13:48",
+  "gpus": {
+    "nvidia": {
+      "present": false
+    },
+    "amd": {
+      "present": true,
+      "name": "Radeon RX 580 Series",
+      "vendor_id": "0x1002",
+      "device_id": "0x67DF",
+      "subsys_id": "0x8A921462",
+      "revision": 231,
+      "vram_mb": 7790,
+      "shared_mb": 8155,
+      "luid": 70266,
+      "dxgi_index": 0,
+      "feature_level": "D3D11.1",
+      "feature_level_code": 45312,
+      "caps": {
+        "doubles": true,
+        "compute_shaders": true,
+        "structured_buffers": true,
+        "logic_ops": true,
+        "tiled_resources": false,
+        "conservative_raster": false,
+        "min_max_filtering": true,
+        "shader_trace": true
+      }
+    }
+  },
+  "translation": {
+    "shared": [],
+    "nvidia_only": [],
+    "amd_only": [
+      "compute_shaders",
+      "doubles",
+      "logic_ops",
+      "min_max_filtering",
+      "shader_trace",
+      "structured_buffers"
+    ],
+    "routing_table": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    },
+    "memory_flow": {
+      "amd_dedicated_mb": 0,
+      "nvidia_dedicated_mb": 0,
+      "amd_shared_window_mb": 0,
+      "nvidia_shared_window_mb": 0,
+      "pcie_bridge_capacity_mb": 0,
+      "amd_to_nvidia_path": "AMD VRAM -> PCIe -> System RAM -> NVIDIA shared window",
+      "nvidia_to_amd_path": "NVIDIA VRAM -> PCIe -> System RAM -> AMD shared window",
+      "notes": "Flow is bidirectional via PCIe shared memory regions. Bridge capacity is the smaller of the two shared windows \u2014 saturating it causes PCIe stalls. Keep cross-GPU transfers under 0MB per operation."
+    }
+  },
+  "_sig": "6e75befde292d960bb1f7d929e093dadaef7274df8ec6e939f2a9fe68ca9294f",
+  "_signed_at": "2026-06-18T17:13:48"
+}

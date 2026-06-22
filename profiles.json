@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "app_name": "Cyberpunk 2077 Hybrid Link",
+        "exec_path": "D:\\Steam\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe",
+        "bridge_mode": "vulkan-fsr-wrap",
+        "status": "Latched"
+    },
+    {
+        "id": 2,
+        "app_name": "PyTorch Compute Instance",
+        "exec_path": "C:\\Users\\JJ\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "bridge_mode": "cuda-zluda",
+        "status": "Latched"
+    }
+]

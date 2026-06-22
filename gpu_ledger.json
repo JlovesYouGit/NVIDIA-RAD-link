@@ -1,0 +1,626 @@
+[
+  {
+    "timestamp": "2026-06-01T20:04:15",
+    "sig": "30d7ea28a2ce9d9e...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:04:35",
+    "sig": "58206b471cd5fea4...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:08:44",
+    "sig": "783d0e18f2e7a87a...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:22:39",
+    "sig": "0f9b9153cff6e5dd...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:29:34",
+    "sig": "91443d0c14be697a...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:40:30",
+    "sig": "b66ff788df702e6e...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:42:36",
+    "sig": "8909f3cd50389b53...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:46:32",
+    "sig": "2043fbd3edabacc8...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:48:36",
+    "sig": "1b0e8095799baf9f...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:50:27",
+    "sig": "59cc4f0ee669bd13...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T20:52:41",
+    "sig": "c3a57076b6f33bea...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T23:33:24",
+    "sig": "2f1cbf69fbf9e3be...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T23:35:40",
+    "sig": "f031d4072aa97c88...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-02T12:24:29",
+    "sig": "67aac38a2d427440...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-02T12:26:37",
+    "sig": "687c8bb599c79217...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-03T23:42:52",
+    "sig": "64f819fcd61c431f...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-03T23:45:38",
+    "sig": "fbb367f4d6d30756...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:34:19",
+    "sig": "01254b677eb28586...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:36:24",
+    "sig": "502cb7c113dea533...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-06T12:51:44",
+    "sig": "cbdd164eaffaf61c...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-06T12:53:39",
+    "sig": "5326315799a87160...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-07T20:54:54",
+    "sig": "80fc8aaad0180187...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-07T20:56:44",
+    "sig": "c7059b978b8d4e9d...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-12T21:24:21",
+    "sig": "e5a77283e630e754...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-12T21:27:21",
+    "sig": "e2c970d8286e1fd6...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-13T11:23:04",
+    "sig": "f6b4408797c5057c...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-13T11:25:33",
+    "sig": "f60279f75b6c7b0d...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-15T18:08:27",
+    "sig": "43796f129101ef5f...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-15T18:10:53",
+    "sig": "7a19880b6dbd7e1c...",
+    "nvidia_id": "0x128B",
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "nvidia",
+      "conservative_raster": "none",
+      "doubles": "nvidia",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "nvidia",
+      "structured_buffers": "nvidia",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-16T13:14:00",
+    "sig": "62cd3ed56fa50e6b...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-16T13:16:31",
+    "sig": "2a64e48cc36c5d12...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-16T14:47:17",
+    "sig": "88e95e7a84431da4...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-16T14:49:11",
+    "sig": "ed79515d2aa63110...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-16T15:02:07",
+    "sig": "944fe547b997c8fd...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-16T15:03:58",
+    "sig": "940b18707be719c8...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-16T15:17:45",
+    "sig": "7cb3cbfe20cc6f54...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-16T15:19:31",
+    "sig": "a86e8ee5a73e763a...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-18T17:11:08",
+    "sig": "3a0c2b87fee7bd3a...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  },
+  {
+    "timestamp": "2026-06-18T17:13:48",
+    "sig": "6e75befde292d960...",
+    "nvidia_id": null,
+    "amd_id": "0x67DF",
+    "routing": {
+      "compute_shaders": "amd",
+      "conservative_raster": "none",
+      "doubles": "amd",
+      "logic_ops": "amd",
+      "min_max_filtering": "amd",
+      "shader_trace": "amd",
+      "structured_buffers": "amd",
+      "tiled_resources": "none"
+    }
+  }
+]

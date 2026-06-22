@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiMas Hybrid GPU Engine - Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="header-logo">
+                <div class="logo-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="logo-text">
+                    <h1>OptiMas</h1>
+                    <p>Hybrid GPU Coordination Engine</p>
+                </div>
+            </div>
+            <div class="header-status">
+                <div class="status-badge connected">
+                    <span class="pulse-dot"></span>
+                    <span id="daemon-badge-text">DAEMON ACTIVE</span>
+                </div>
+                <div class="uptime-counter">
+                    <i class="fa-regular fa-clock"></i>
+                    <span>UPTIME: <strong id="uptime-display">00:00:00</strong></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <main class="dashboard-grid">
+            <!-- AMD GPU Card -->
+            <section class="gpu-card primary-gpu">
+                <div class="card-glow"></div>
+                <div class="gpu-brand-bar amd">
+                    <span><i class="fa-solid fa-bolt"></i> PRIMARY COMPUTE ENGINE</span>
+                    <span class="gpu-arch">Polaris (AMD)</span>
+                </div>
+                <div class="gpu-info-header">
+                    <h2 id="amd-name">Radeon RX 580 Series</h2>
+                    <p class="driver-tag"><i class="fa-solid fa-code-fork"></i> Driver: <span id="amd-driver">31.0.21023.2010</span></p>
+                </div>
+                <div class="gpu-metrics">
+                    <div class="metric-item">
+                        <span class="metric-label">VRAM Allocation (Merged Buffer)</span>
+                        <div class="metric-value-row">
+                            <span class="metric-value" id="amd-vram">8.0 GB</span>
+                            <span class="metric-percentage">100% Shared</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar amd-bar" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-grid">
+                        <div class="sub-metric">
+                            <span class="label">Vulkan Level</span>
+                            <span class="value">1.3 (Active)</span>
+                        </div>
+                        <div class="sub-metric">
+                            <span class="label">Shader Load</span>
+                            <span class="value active-text">92% Utilized</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shaders Canvas Visualizer -->
+                <div class="canvas-container">
+                    <canvas id="amd-canvas"></canvas>
+                </div>
+            </section>
+
+            <!-- NVIDIA GPU Card -->
+            <section class="gpu-card secondary-gpu">
+                <div class="card-glow"></div>
+                <div class="gpu-brand-bar nvidia">
+                    <span><i class="fa-solid fa-circle-nodes"></i> AGENT INTERMEDIATOR</span>
+                    <span class="gpu-arch">Kepler (GK208)</span>
+                </div>
+                <div class="gpu-info-header">
+                    <h2 id="nvidia-name">NVIDIA GeForce GT 710</h2>
+                    <p class="driver-tag"><i class="fa-solid fa-code-fork"></i> Driver: <span id="nvidia-driver">472.12 (sm_35 Anchor)</span></p>
+                </div>
+                <div class="gpu-metrics">
+                    <div class="metric-item">
+                        <span class="metric-label">Memory Latching Presence</span>
+                        <div class="metric-value-row">
+                            <span class="metric-value" id="nvidia-vram">1.0 GB</span>
+                            <span class="metric-percentage active-text">Bridge Synced</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar nvidia-bar" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-grid">
+                        <div class="sub-metric">
+                            <span class="label">CUDA Compute</span>
+                            <span class="value">3.5 (sm_35)</span>
+                        </div>
+                        <div class="sub-metric">
+                            <span class="label">Handshake Status</span>
+                            <span class="value success-text">LATCHED</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Intermediator Canvas Visualizer -->
+                <div class="canvas-container">
+                    <canvas id="nvidia-canvas"></canvas>
+                </div>
+            </section>
+
+            <!-- Swap Memory & Pagefile Optimizer -->
+            <section class="dashboard-card swap-optimizer">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-memory icon-orange"></i>
+                        <h3>Virtual Swap Bank Maximizer</h3>
+                    </div>
+                    <span class="feature-tag">CONSTANT SYSTEM MEMORY</span>
+                </div>
+                <div class="swap-content">
+                    <p>Pools standard physical memory with disk-based virtual memory (swap banks) to support extreme unified VRAM allocation peaks and bidirectional card transfer buffers.</p>
+                    
+                    <div class="swap-stats-row">
+                        <div class="swap-stat">
+                            <span class="label">Total Virtual Pool</span>
+                            <span class="value" id="swap-pool-total">48.2 GB</span>
+                        </div>
+                        <div class="swap-stat">
+                            <span class="label">Active Allocation</span>
+                            <span class="value" id="swap-allocation-type">Unified Dynamic</span>
+                        </div>
+                    </div>
+
+                    <button class="opt-btn" id="optimize-swap-btn">
+                        <span class="btn-ring"></span>
+                        <i class="fa-solid fa-rocket"></i> MAXIMIZE SWAP MEMORY
+                    </button>
+                    <p class="btn-subtext"><i class="fa-solid fa-circle-info"></i> Requires Administrator elevation</p>
+                </div>
+            </section>
+
+            <!-- Cloned Repositories Check -->
+            <section class="dashboard-card repos-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-folder-tree icon-blue"></i>
+                        <h3>Cloned Components</h3>
+                    </div>
+                </div>
+                <div class="repos-list">
+                    <div class="repo-item">
+                        <div class="repo-meta">
+                            <i class="fa-brands fa-github"></i>
+                            <div class="repo-details">
+                                <h4>NVIDIA Streamline SDK</h4>
+                                <p>Super-Resolution abstraction layers</p>
+                            </div>
+                        </div>
+                        <span class="badge loaded"><i class="fa-solid fa-circle-check"></i> Cloned</span>
+                    </div>
+                    <div class="repo-item">
+                        <div class="repo-meta">
+                            <i class="fa-brands fa-github"></i>
+                            <div class="repo-details">
+                                <h4>Recol DLSS-Updater</h4>
+                                <p>Automatic game scanner and DLL link manager</p>
+                            </div>
+                        </div>
+                        <span class="badge loaded" id="dlss-updater-badge"><i class="fa-solid fa-circle-check"></i> Cloned</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vulkan & CUDA Forced Link Profiles -->
+            <section class="dashboard-card profiles-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-link icon-pink"></i>
+                        <h3>Vulkan & CUDA Latch Profiles</h3>
+                    </div>
+                    <button class="add-profile-btn" id="open-modal-btn"><i class="fa-solid fa-plus"></i> ADD PROFILE</button>
+                </div>
+                
+                <div class="profiles-list-container">
+                    <div class="profiles-header-row">
+                        <span>Application</span>
+                        <span>Exec Path</span>
+                        <span>Routing Mode</span>
+                        <span>Status</span>
+                        <span>Action</span>
+                    </div>
+                    <div id="profiles-list">
+                        <!-- Dynamic Profiles will be injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Profile Modal -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-link"></i> Add New Latch Profile</h3>
+                <button class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="app_name">Application Name</label>
+                    <input type="text" id="app_name" placeholder="e.g. Cyberpunk 2077 Hybrid Link" required>
+                </div>
+                <div class="form-group">
+                    <label for="exec_path">Executable Full Path</label>
+                    <input type="text" id="exec_path" placeholder="e.g. D:\Steam\steamapps\common\Cyberpunk 2077\bin\x64\Cyberpunk2077.exe" required>
+                </div>
+                <div class="form-group">
+                    <label for="bridge_mode">Intermediator Bridge Mode</label>
+                    <select id="bridge_mode">
+                        <option value="vulkan-fsr-wrap">Vulkan Force Link & FSR Upscale Wrapper (DLSS Bypass)</option>
+                        <option value="cuda-zluda">CUDA Intermediary Bridge via ZLUDA (CUDA on RX580)</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" id="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">LATCH ENGINE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
