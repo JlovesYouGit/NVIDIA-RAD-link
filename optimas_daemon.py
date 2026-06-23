@@ -376,6 +376,15 @@ class OptiMasAPI(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     start_time = time.time()
 
+    # Establish the Session Driver Multi-Duplex Link first
+    try:
+        from session_driver import OptiMasSessionDriver
+        session_driver = OptiMasSessionDriver()
+        session_driver.establish_duplex_link()
+        session_driver.force_windows_recognition()
+    except Exception as e:
+        print(f"[SessionDriver] Failed to initialize: {e}", flush=True)
+
     _keep_nvidia_alive()
     _cross_adapter_buffer_loop()
 
